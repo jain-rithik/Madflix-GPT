@@ -7,14 +7,14 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import Footer from "./Footer";
+import { BANNER_IMG, USER_AVTAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const email = useRef(null);
@@ -39,8 +39,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -70,8 +68,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: fullName.current.value,
-            photoURL:
-              "https://stories.infobae.com/wp-content/uploads/2022/02/perfil-1.png",
+            photoURL: USER_AVTAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -83,7 +80,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -107,15 +103,15 @@ const Login = () => {
       <Header />
       <div className="w-full  overflow-hidden bg-gradient-to-t from-black via-transparent to-black">
         <img
-          className="relative w-full min-h-full -z-10 object-cover"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/2e07bc25-8b8f-4531-8e1f-7e5e33938793/e4b3c14a-684b-4fc4-b14f-2b486a4e9f4e/IN-en-20240219-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          className="relative w-full h-[170vh] sm:h-[180vh] md:h-[165vh] -z-10 object-cover md:object-fill"
+          src={BANNER_IMG}
           alt="banner"
         />
       </div>
-      <div className="w-full flex justify-center absolute top-20">
+      <div className="w-full flex justify-center absolute top-24 md:top-20">
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col gap-4 w-[450px] rounded-md bg-black/60 px-20 py-12 text-white"
+          className="flex flex-col gap-4 w-[450px] rounded-md bg-black/60 px-8 sm:px-20 py-12 text-white"
         >
           <h1 className="font-bold text-3xl text-white mb-4">
             {isSignInForm ? "Sign In" : "Sign Up"}
@@ -170,6 +166,7 @@ const Login = () => {
           </p>
         </form>
       </div>
+      <Footer />
     </div>
   );
 };
