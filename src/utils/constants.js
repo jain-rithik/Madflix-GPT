@@ -26,3 +26,5 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "ta", name: "தமிழ்" },
   { identifier: "te", name: "తెలుగు" },
 ];
+
+export const OPENAI_KEY = "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"
