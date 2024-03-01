@@ -33,22 +33,24 @@ const GPTSearchBar = () => {
     const gptMovies = gptResults.choices?.[0]?.message?.content.split(", ");
     // ['Andaz Apna Apna', 'Chupke Chupke', 'Padosan', 'Mera Naam Joker', 'Hera Pheri']
 
-    const promiseArray = gptMovies.map(movie => searchMovieTMDB(movie));
+    const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
     //[promise, promise, promise, promise, promise]
 
     const allTmdbResults = await Promise.all(promiseArray);
 
-    const tmdbResults = allTmdbResults.map(allTmdbResult => allTmdbResult[0]);
-    console.log(tmdbResults);
-    dispatch(addGptMovieResult({movieNames:gptMovies, movieResults:tmdbResults}));
+    // const tmdbResults = allTmdbResults.map(allTmdbResult => allTmdbResult[0]);
+    // console.log(tmdbResults);
+    dispatch(
+      addGptMovieResult({ movieNames: gptMovies, movieResults: allTmdbResults })
+    );
   };
 
   //search movie in tmdb
   const searchMovieTMDB = async (movie) => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/search/movie?query=" +
+      "https://api.themoviedb.org/3/search/movie?query=%22" +
         movie +
-        "&include_adult=false&language=en-US&page=1",
+        "%22&include_adult=false&page=1&sort_by=popularity.desc",
       API_OPTIONS
     );
     const json = await data.json();

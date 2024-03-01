@@ -12,7 +12,7 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MTQ4NTRlNWRhOTBiMjNkYjE0MDEwMzU1MDM0NDUxOCIsInN1YiI6IjY1ZGM0NDMxM2RjODg1MDE4YjQyZDlmYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PJNE-dqCOMIsGwH2cDR5ut5GHJ7WfJaC8qEl5c7TKy0",
+      "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -27,4 +27,4 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "te", name: "తెలుగు" },
 ];
 
-export const OPENAI_KEY = "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"
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
