@@ -7,15 +7,17 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import Footer from "./Footer";
 import { BANNER_IMG, USER_AVTAR } from "../utils/constants";
+import lang from "../utils/languageConstants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
   const dispatch = useDispatch();
+  const langKey = useSelector((store) => store.config.lang);
 
   const email = useRef(null);
   const password = useRef(null);
@@ -108,32 +110,32 @@ const Login = () => {
           alt="banner"
         />
       </div>
-      <div className="w-full flex justify-center absolute top-24 md:top-20">
+      <div className="w-full flex justify-center absolute top-28 md:top-20">
         <form
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col gap-4 w-[450px] rounded-md bg-black/60 px-8 sm:px-20 py-12 text-white"
         >
           <h1 className="font-bold text-3xl text-white mb-4">
-            {isSignInForm ? "Sign In" : "Sign Up"}
+            {isSignInForm ? lang[langKey].signIn : lang[langKey].signUp}
           </h1>
           {!isSignInForm && (
             <input
               ref={fullName}
               type="text"
-              placeholder="Full Name"
+              placeholder={lang[langKey].fullName}
               className="rounded-md w-full h-full p-4 font-semibold bg-black/50 border border-gray-200/50"
             />
           )}
           <input
             ref={email}
             type="email"
-            placeholder="Email Address"
+            placeholder={lang[langKey].emailAddress}
             className=" rounded-md w-full h-full p-4 font-semibold bg-black/50 border border-gray-200/50"
           />
           <input
             ref={password}
             type="password"
-            placeholder="Password"
+            placeholder={lang[langKey].password}
             className="rounded-md w-full h-full p-4 font-semibold bg-black/50 border border-gray-200/50"
           />
 
@@ -143,18 +145,18 @@ const Login = () => {
             className="p-2 my-2 rounded-sm w-full bg-red-600"
             onClick={handleBtnClick}
           >
-            {isSignInForm ? "Sign In" : "Sign Up"}
+            {isSignInForm ? lang[langKey].signIn : lang[langKey].signUp}
           </button>
           <p className="text-gray-300/80">
-            {isSignInForm ? "New to Netflix?" : "Already registered?"}{" "}
+            {isSignInForm ? lang[langKey].newToNetflix : lang[langKey].alreadyRegistered}{" "}
             <b
               onClick={toggleSignInForm}
               className="text-white font-bold cursor-pointer hover:underline"
             >
-              {isSignInForm ? "Sign up now." : "Sign In"}
+              {isSignInForm ? lang[langKey].signUpNow : lang[langKey].signIn}
             </b>
           </p>
-          <p className="font-light text-sm text-gray-300/80 mb-20">
+          <p className="font-light text-sm text-gray-300/80 md:mb-20">
             This page is protected by Google reCAPTCHA to ensure you're not a
             bot.{" "}
             <b

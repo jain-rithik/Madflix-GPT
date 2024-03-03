@@ -1,7 +1,7 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
@@ -59,11 +59,12 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute px-10 py-2 z-10 flex justify-between w-full bg-gradient-to-b from-black from-50% ">
-      <img className="w-56" src={LOGO} alt="logo" />
-
+    <div className="absolute px-10 py-2 z-10 flex md:justify-between md:flex-row flex-col w-full bg-gradient-to-b from-black from-50% ">
+      <Link to={"/browse"} >
+      <img className="w-56 mx-auto md:mx-0" src={LOGO} alt="logo" />
+      </Link>
       {user && (
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 justify-between">
 
           {showGPTSearch && <select
             className="bg-gray-900 text-white p-2 m-2"
@@ -84,7 +85,7 @@ const Header = () => {
             {showGPTSearch? lang[langKey].home : "GPT Search"}
           </button>
           <img
-            className="w-12 h-12 rounded-lg"
+            className="w-12 h-12 rounded-lg hidden md:block"
             src={user?.photoURL}
             alt="user-icon"
           />
