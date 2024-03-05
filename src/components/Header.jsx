@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
-import { toggleGPTSearchView } from "../utils/gptSlice";
+import { clearMovieResults, setHomePage, toggleGPTSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 import lang from "../utils/languageConstants";
 
@@ -38,7 +38,9 @@ const Header = () => {
             photoURL: photoURL,
           })
         );
-        navigate("/browse");
+        if (window.location.pathname === "/") {
+          navigate("/browse");
+        }
       } else {
         // User is signed out
         dispatch(removeUser());
@@ -51,6 +53,9 @@ const Header = () => {
   }, []);
 
   const handleGPTSearchClick = () => {
+    if(showGPTSearch === true){
+      dispatch(clearMovieResults())
+    }
     dispatch(toggleGPTSearchView());
   };
 
@@ -60,7 +65,7 @@ const Header = () => {
 
   return (
     <div className="absolute px-10 py-2 z-10 flex md:justify-between md:flex-row flex-col w-full bg-gradient-to-b from-black from-50% ">
-      <Link to={"/browse"} >
+      <Link to="/" onClick={() => dispatch(setHomePage())}>
       <img className="w-56 mx-auto md:mx-0" src={LOGO} alt="logo" />
       </Link>
       {user && (
