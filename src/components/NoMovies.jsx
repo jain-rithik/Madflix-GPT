@@ -25,7 +25,7 @@ const NoMovies = () => {
         </div>
         <div class="spoke"></div>
       </div>
-      <h1 className="text-white text-3xl text-center w-7/12"> Note: Unable to fetch movies if you are using jio as TMDB Api is blocked by your ISP</h1>
+      <h1 className="text-white sm:text-3xl text-xl text-center sm:w-7/12 p-2"> Note: Unable to fetch movies if you are using jio as TMDB Api is blocked by your ISP</h1>
     </div>
   );
 };
