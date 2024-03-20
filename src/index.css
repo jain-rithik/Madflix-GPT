@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 /* In your styles.css or styles.scss */
-.scrollbar-hide {
+/* .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
+  } */
 
-  /* width
+ /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
     height: 5px;
 }
  
 /* Track */
-/* ::-webkit-scrollbar-track { */
-    /* background: #000000; */
-/* } */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
  
 /* Handle */
-/* ::-webkit-scrollbar-thumb { */
-    /* background: #888; */
-    /* border-radius: 10px; */
-/* } */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
  
 /* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover { */
-    /* background: #555; */
-/* } */ 
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} 
 
   
   

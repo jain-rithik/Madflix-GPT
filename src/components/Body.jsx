@@ -4,9 +4,15 @@ import Browse from "./Browse";
 import MovieInfo from "./MovieInfo";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
+import MoviesByActor from "./MoviesByActor";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import useOnlineStatus from "../hooks/useOnlineStatus";
 
 const Body = () => {
 
+  useOnlineStatus();
+  
   const appRouter = createBrowserRouter([
     {
       path: "/",
@@ -19,15 +25,35 @@ const Body = () => {
     {
       path: "/movieinfo/:id",
       element: <MovieInfo />,
-    }
+    },
+    {
+      path: "/castmovie/:id",
+      element: <MoviesByActor />,
+    },
   ]);
 
-  
-
   return (
-    <div>
-      <RouterProvider router={appRouter} />
-    </div>
+    <>
+      
+      <div>
+      <ToastContainer
+        position="top-left"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        stacked
+        toastStyle={{ border: "1px solid #dadadaaa" }}
+        // transition:Bounce
+      />
+        <RouterProvider router={appRouter} />
+      </div>
+    </>
   );
 };
 

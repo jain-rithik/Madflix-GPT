@@ -6,9 +6,9 @@ import { addallTimeFav } from "../utils/movieSlice";
 const useAllTimeFav = () => {
     const dispatch = useDispatch();
 
-    const topShows = useSelector(store => store.movies.topShows);
+    const allTimeFav = useSelector(store => store.movies.allTimeFav);
 
-    const getTopShows= async () => {
+    const getAllTimeFavs = async () => {
         const data = await fetch("https://api.themoviedb.org/3/discover/movie?include_adult=false&page=1&region=IN&sort_by=vote_count.desc&with_origin_country=IN&with_original_language=hi", API_OPTIONS);
         const json = await data.json();
 
@@ -18,7 +18,7 @@ const useAllTimeFav = () => {
     }
 
     useEffect(() => {
-        !topShows && getTopShows();
+        !allTimeFav && getAllTimeFavs();
     }, [])
 }
 

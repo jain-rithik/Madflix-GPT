@@ -1,9 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import lang from "../utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
 import openai from "../utils/openai";
 import { API_OPTIONS } from "../utils/constants";
-import { addGptMovieResult } from "../utils/gptSlice";
+import {
+  addGptMovieResult,
+  clearMovieResults,
+  setSearchBtnClicked,
+} from "../utils/gptSlice";
+import { toast } from "react-toastify";
 
 const GPTSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
@@ -11,6 +16,9 @@ const GPTSearchBar = () => {
   const dispatch = useDispatch();
 
   const handleGPTSearchClick = async () => {
+    try {
+    dispatch(clearMovieResults());
+    dispatch(setSearchBtnClicked(true));
     const searchText = search.current.value;
 
     //make api call to gpt to get result
@@ -43,35 +51,43 @@ const GPTSearchBar = () => {
     dispatch(
       addGptMovieResult({ movieNames: gptMovies, movieResults: allTmdbResults })
     );
+    } catch (error) {
+      console.error(error);
+      toast.error("Limit Exceeded: Please try again after 20s")
+    }
   };
 
   //search movie in tmdb
   const searchMovieTMDB = async (movie) => {
-    const data = await fetch(
-      "https://api.themoviedb.org/3/search/movie?query=%22" +
-        movie +
-        "%22&include_adult=false&page=1&sort_by=popularity.desc",
-      API_OPTIONS
-    );
-    const json = await data.json();
+    try {
+      const data = await fetch(
+        "https://api.themoviedb.org/3/search/movie?query=%22" +
+          movie +
+          "%22&include_adult=false&page=1&sort_by=popularity.desc",
+        API_OPTIONS
+      );
+      const json = await data.json();
 
-    return json.results;
+      return json.results;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <div className="md:pt-[10%] pt-[50%] flex justify-center">
+    <div className="md:pt-[12%] pt-[40%]  flex justify-center">
       <form
-        className="w-full md:w-1/2 bg-black grid grid-cols-12"
+        className="w-full px-5 md:w-1/2 grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={search}
           type="text"
-          className="p-4 m-4 col-span-9"
+          className="p-3 col-span-9 rounded-l-full outline-none text-center"
           placeholder={lang[langKey].GPTSearchPlaceholder}
         />
         <button
-          className="col-span-3 m-4 py-2 px-4 bg-red-700 text-white rounded-lg"
+          className="col-span-3 py-2 px-4 bg-red-700 hover:bg-red-800 text-white rounded-r-full"
           onClick={handleGPTSearchClick}
         >
           {lang[langKey].search}

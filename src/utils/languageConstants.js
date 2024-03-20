@@ -3,6 +3,8 @@ const lang = {
     search: "Search",
     GPTSearchPlaceholder: "What would you like to watch today?",
     home: "Home",
+    welcome: "Welcome",
+    logout: "Logout",
     signIn: "Sign In",
     emailAddress: "Email Address",
     password: "Password",
@@ -20,11 +22,19 @@ const lang = {
       cookiePreferences: "Cookie Preferences",
       corporateInformation: "Corporate Information",
     },
+    forgotPass:{
+      forgot: "Forgot Password?",
+      reset: "Reset Password",
+      cancel: "Cancel",
+      send: "Send Reset Link"
+    }
   },
   hi: {
     search: "खोजें",
     GPTSearchPlaceholder: "आप आज क्या देखना चाहेंगे?",
     home: "होम",
+    welcome: "स्वागत हैं",
+    logout: "लोग आउट",
     signIn: "साइन इन करें",
     emailAddress: "ईमेल पता",
     password: "पासवर्ड",
@@ -42,11 +52,19 @@ const lang = {
       cookiePreferences: "कुकी पसंद",
       corporateInformation: "कॉर्पोरेट जानकारी",
     },
+    forgotPass: {
+      forgot: "पासवर्ड भूल गए?",
+      reset: "पासवर्ड रीसेट",
+      cancel: "रद्द करें",
+      send: "रीसेट लिंक भेजें"
+    }
   },
   bn: {
     search: "অনুসন্ধান",
     GPTSearchPlaceholder: "আপনি আজ কি দেখতে চান?",
     home: "হোম",
+    welcome: "স্বাগতম",
+    logout: "লগ আউট",
     signIn: "সাইন ইন করুন",
     emailAddress: "ইমেইল ঠিকানা",
     password: "পাসওয়ার্ড",
@@ -64,11 +82,19 @@ const lang = {
       cookiePreferences: "কুকি পছন্দ",
       corporateInformation: "কর্পোরেট তথ্য",
     },
+    forgotPass: {
+      forgot: "পাসওয়ার্ড ভুলে গেছেন?",
+      reset: "পাসওয়ার্ড রিসেট",
+      cancel: "বাতিল করুন",
+      send: "রিসেট লিঙ্ক প্রেরণ করুন"
+    }
   },
   mr: {
     search: "शोध",
     GPTSearchPlaceholder: "आपण आज काही पाहायचं आहे का?",
     home: "होम",
+    welcome: "स्वागत आहे",
+    logout: "बाहेर पडणे",
     signIn: "साइन इन करा",
     emailAddress: "ईमेल पत्ता",
     password: "पासवर्ड",
@@ -86,11 +112,19 @@ const lang = {
       cookiePreferences: "कुकी पसंती",
       corporateInformation: "कॉर्पोरेट माहिती",
     },
+    forgotPass: {
+      forgot: "पासवर्ड विसरलात?",
+      reset: "पासवर्ड रीसेट",
+      cancel: "रद्द करा",
+      send: "रीसेट लिंक पाठवा"
+    }
   },
   te: {
     search: "వెతకండి",
     GPTSearchPlaceholder: "మీరు ఈ రోజు ఏమి చూడాలి?",
     home: "హోమ్",
+    welcome: "స్వాగతం",
+    logout: "లాగ్ అవుట్",
     signIn: "సైన్ ఇన్ చేయండి",
     emailAddress: "ఇమెయిల్ చిరునామా",
     password: "పాస్వర్డ్",
@@ -108,11 +142,19 @@ const lang = {
       cookiePreferences: "కుకీ అభిరుచులు",
       corporateInformation: "కార్పొరేట్ సమాచారం",
     },
+    forgotPass: {
+      forgot: "పాస్‌వర్డ్‌ను మర్చిపోయారా?",
+      reset: "పాస్‌వర్డ్‌ను రీసెట్ చేయండి",
+      cancel: "రద్దు చేయండి",
+      send: "రీసెట్ లింక్ పంపండి"
+    }
   },
   ta: {
     search: "தேடு",
     GPTSearchPlaceholder: "நீங்கள் இன்று என்னைப் பார்க்க விரும்புகிறீர்களா?",
     home: "ஹோம்",
+    welcome: "வரவேற்கின்றோம்",
+    logout: "வெளியேறு",
     signIn: "உள்நுழைய",
     emailAddress: "மின்னஞ்சல் முகவரி",
     password: "கடவுச்சொல்",
@@ -129,6 +171,12 @@ const lang = {
       privacy: "தனியுரிமை",
       cookiePreferences: "குக்கீ விருதுகள்",
       corporateInformation: "கார்ப்பரேட் தகவல்",
+    },
+    forgotPass: {
+      forgot: "கடவுச்சொல்லை மறந்துவிட்டீர்களா?",
+      reset: "கடவுச்சொல் மீளமைக்க",
+      cancel: "ரத்து செய்",
+      send: "மீள்மூலம் இணைப்பு அனுப்பு"
     },
   },
 };

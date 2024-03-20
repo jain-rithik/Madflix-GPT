@@ -21,3 +21,10 @@ export const checkSignUpData = (fullName, email, password) => {
 
     return null;
 } 
+
+export const checkForgotPassData = (email) => {
+    const isEmailValid = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email);
+
+    if(!isEmailValid) return "Email ID is not valid";
+    return null;
+}
