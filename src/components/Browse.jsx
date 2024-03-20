@@ -11,10 +11,12 @@ import { useDispatch, useSelector } from "react-redux";
 import useAllTimeFav from "../hooks/useAllTimeFav";
 import { clearMovieInfo } from "../utils/movieSlice";
 import OfflinePage from "./OfflinePage";
+import NoMovies from "./NoMovies";
 
 const Browse = () => {
   const showGPTSearch = useSelector((store) => store.gpt.showGPTSearch);
   const onlineStatus = useSelector((store) => store.config.onlineStatus);
+  const movies = useSelector((store) => store.movies?.nowPlayingMovies);
 
   const dispatch = useDispatch();
   dispatch(clearMovieInfo());
@@ -34,8 +36,14 @@ const Browse = () => {
           <GPTSearch />
         ) : (
           <>
+          {movies ? (
+            <>
             <MainContainer />
             <SecondaryContainer />
+            </>
+          ) : (
+            <NoMovies/>
+          )}
           </>
         )
       ) : (
