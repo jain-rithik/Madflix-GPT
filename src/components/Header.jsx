@@ -24,7 +24,7 @@ const Header = () => {
   const showGPTSearch = useSelector((store) => store.gpt.showGPTSearch);
   const [showNavItems, setShowNavItems] = useState(false);
   const sm_screen_class =
-    "w-[165px] bg-black/90 absolute flex flex-col right-0 top-11 gap-3 rounded-lg border p-4 border-gray-300 items-center";
+    "w-40 bg-black/90 absolute flex flex-col right-0 top-11 gap-3 rounded-lg border p-4 border-gray-300 items-center";
 
   const handleSignOut = () => {
     signOut(auth)
@@ -153,7 +153,7 @@ const Header = () => {
                     handleGPTSearchClick();
                     setShowNavItems(false);
                   }}
-                  className="bg-purple-800 text-white px-4 py-1.5 md:w-auto w-28 md:text-lg rounded-md"
+                  className="bg-purple-800 text-white px-4 py-1.5 md:w-auto w-28 h-9 md:text-lg rounded-md"
                 >
                   {showGPTSearch ? lang[langKey].home : "GPT Search"}
                 </button>
