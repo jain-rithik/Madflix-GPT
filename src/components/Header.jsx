@@ -24,7 +24,7 @@ const Header = () => {
   const showGPTSearch = useSelector((store) => store.gpt.showGPTSearch);
   const [showNavItems, setShowNavItems] = useState(false);
   const sm_screen_class =
-    "w-40 bg-black/90 absolute flex flex-col right-0 top-11 gap-3 rounded-lg border p-4 border-gray-300 items-center";
+    "w-[165px] bg-black/90 absolute flex flex-col right-0 top-11 gap-3 rounded-lg border p-4 border-gray-300 items-center";
 
   const handleSignOut = () => {
     signOut(auth)
@@ -80,7 +80,13 @@ const Header = () => {
 
   return (
     <div className="absolute md:px-10 md:py-2 p-4 md:pt-8 z-10 flex items-center justify-between w-full bg-gradient-to-b from-black from-50% ">
-      <Link to="/" onClick={() => dispatch(setHomePage())}>
+      <Link
+        to="/"
+        onClick={() => {
+          dispatch(setHomePage());
+          dispatch(setOtherURL(false));
+        }}
+      >
         <img
           className="md:w-60 w-[50vw] max-w-60 mx-auto md:mx-0 cursor-pointer"
           src={logo}
@@ -117,30 +123,30 @@ const Header = () => {
 
             {otherURL ? (
               <Link to={"/browse"}>
-              <button
-                onClick={() => {
-                  dispatch(setOtherURL(false));
-                  setShowNavItems(false);
-                }}
-                className="bg-purple-800 text-white px-4 py-1.5 md:w-auto w-28 md:text-lg rounded-md"
-              >
-                {lang[langKey].home}
-              </button>
+                <button
+                  onClick={() => {
+                    dispatch(setOtherURL(false));
+                    setShowNavItems(false);
+                  }}
+                  className="bg-purple-800 text-white px-4 py-1.5 md:w-auto w-28 md:text-lg rounded-md"
+                >
+                  {lang[langKey].home}
+                </button>
               </Link>
             ) : (
               <>
                 {showGPTSearch && (
-                <select
-                  className="bg-gray-900 text-white p-2 m-2 md:w-auto w-28 rounded-md outline-none"
-                  onChange={handleLanguageChange}
-                  value={langKey}
-                >
-                  {SUPPORTED_LANGUAGES.map((lang) => (
-                    <option key={lang.identifier} value={lang.identifier}>
-                      {lang.name}
-                    </option>
-                  ))}
-                </select>
+                  <select
+                    className="bg-gray-900 text-white p-2 m-2 md:w-auto w-28 rounded-md outline-none"
+                    onChange={handleLanguageChange}
+                    value={langKey}
+                  >
+                    {SUPPORTED_LANGUAGES.map((lang) => (
+                      <option key={lang.identifier} value={lang.identifier}>
+                        {lang.name}
+                      </option>
+                    ))}
+                  </select>
                 )}
                 <button
                   onClick={() => {

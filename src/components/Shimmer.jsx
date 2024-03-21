@@ -9,12 +9,12 @@ const Shimmer = () => {
           return (
             <div key={"shim" + idx} className="mb-8">
               <h1 className="my-4 h-7 bg-neutral-400/50 animate-pulse w-[60%] sm:w-40% md:w-[33%] rounded-lg"></h1>
-              <div className="flex gap-5 overflow-x-scroll">
+              <div className="flex gap-5 overflow-x-scroll mb-1">
                 {Array(Math.floor(Math.random() * 8) + 1)
                   .fill("")
                   .map((el, idx) => {
                     return (
-                      <div key={"ShimCard" + idx}>
+                      <div key={"ShimCard" + idx} className="mb-1">
                         <div class="flex flex-col bg-gray-500 w-44 h-64 animate-pulse rounded-xl p-4 gap-4">
                           <div class="bg-neutral-400/50 w-full h-56 animate-pulse rounded-md"></div>
                           {/* <div class="flex flex-col gap-2">
