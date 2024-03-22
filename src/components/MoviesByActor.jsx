@@ -23,7 +23,7 @@ const MoviesByActor = () => {
   return (
     <div>
       <Header />
-      <div className="bg-black text-white md:px-16 px-8 min-h-screen">
+      <div className="bg-black text-white md:px-16 px-5 min-h-screen">
         <div className="pt-28">
           <h1 className="md:text-4xl text-xl">Discover Movies Starring <b>{actorName}</b></h1>
         </div>

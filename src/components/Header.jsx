@@ -153,7 +153,7 @@ const Header = () => {
                     handleGPTSearchClick();
                     setShowNavItems(false);
                   }}
-                  className="bg-purple-800 text-white px-4 py-1.5 md:w-auto w-28 h-9 md:text-lg rounded-md"
+                  className="bg-purple-800 text-white px-3 sm:px-4 py-1.5 md:w-auto w-28 md:text-lg rounded-md"
                 >
                   {showGPTSearch ? lang[langKey].home : "GPT Search"}
                 </button>

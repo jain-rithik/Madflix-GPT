@@ -10,7 +10,7 @@ const GPTMovieSuggestions = () => {
   console.log(movieNames);
 
   return (
-    <div className="p-4 md:px-8 px-5 m-4 md:my-7 text-white ">
+    <div className="p-4 md:px-8 px-2 m-4 md:my-7 text-white ">
       <div className="backdrop-blur-lg backdrop-filter bg-opacity-30 rounded-lg">
         {searchBtnClicked ? (movieNames ? (
           movieNames?.map((movieName, index) => (
