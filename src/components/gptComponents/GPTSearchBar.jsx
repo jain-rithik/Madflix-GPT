@@ -1,13 +1,13 @@
 import React, { useRef, useState } from "react";
-import lang from "../utils/languageConstants";
+import lang from "../../utils/constants/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
-import openai from "../utils/openai";
-import { API_OPTIONS } from "../utils/constants";
+import openai from "../../utils/openai";
+import { API_OPTIONS } from "../../utils/constants/constants";
 import {
   addGptMovieResult,
   clearMovieResults,
   setSearchBtnClicked,
-} from "../utils/gptSlice";
+} from "../../utils/slices/gptSlice";
 import { toast } from "react-toastify";
 
 const GPTSearchBar = () => {

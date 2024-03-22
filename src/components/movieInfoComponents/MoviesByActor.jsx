@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import useCastMovies from "../hooks/useCastMovies";
+import useCastMovies from "../../hooks/useCastMovies";
 import { useDispatch, useSelector } from "react-redux";
-import MovieCard from "./MovieCard";
-import Header from "./Header";
-import { clearMovieInfo } from "../utils/movieSlice";
-import Loader from "./Loader";
+import MovieCard from "../homePageComponents/MovieCard";
+import Header from "../Header";
+import { clearMovieInfo } from "../../utils/slices/movieSlice";
+import Loader from "../Loader";
 
 const MoviesByActor = () => {
   const { id } = useParams();

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import lang from "../utils/languageConstants";
-import { setForgotPass } from "../utils/configSlice";
+import lang from "../utils/constants/languageConstants";
+import { setForgotPass } from "../utils/slices/configSlice";
 import { checkForgotPassData } from "../utils/validate";
 import { useRef } from "react";
 import { toast } from "react-toastify";

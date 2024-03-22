@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import MovieList from "./MovieList";
+import MovieList from "../homePageComponents/MovieList";
 import Shimmer from "./Shimmer";
 
 const GPTMovieSuggestions = () => {

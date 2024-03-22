@@ -1,5 +1,5 @@
 import React from "react";
-import { BANNER_IMG_CDN_URL } from "../utils/constants";
+import { BANNER_IMG_CDN_URL } from "../../utils/constants/constants";
 
 const MovieInfoContainer = ({ info }) => {
   if (!info) return null;

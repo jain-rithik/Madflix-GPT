@@ -1,7 +1,7 @@
 import React from "react";
 import GPTSearchBar from "./GPTSearchBar";
 import GPTMovieSuggestions from "./GPTMovieSuggestions";
-import { BANNER_IMG } from "../utils/constants";
+import { BANNER_IMG } from "../../utils/constants/constants";
 
 const GPTSearch = () => {
   return (

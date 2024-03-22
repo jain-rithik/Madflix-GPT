@@ -3,16 +3,16 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../utils/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, removeUser } from "../utils/userSlice";
-import { SUPPORTED_LANGUAGES } from "../utils/constants";
+import { addUser, removeUser } from "../utils/slices/userSlice";
+import { SUPPORTED_LANGUAGES } from "../utils/constants/constants";
 import {
   clearMovieResults,
   setHomePage,
   setSearchBtnClicked,
   toggleGPTSearchView,
-} from "../utils/gptSlice";
-import { changeLanguage, setOtherURL } from "../utils/configSlice";
-import lang from "../utils/languageConstants";
+} from "../utils/slices/gptSlice";
+import { changeLanguage, setOtherURL } from "../utils/slices/configSlice";
+import lang from "../utils/constants/languageConstants";
 import logo from "../assets/logo.png";
 
 const Header = () => {

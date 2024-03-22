@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { API_OPTIONS } from "../utils/constants"
+import { API_OPTIONS } from "../utils/constants/constants"
 import { useDispatch, useSelector } from "react-redux";
-import { addallTimeFav } from "../utils/movieSlice";
+import { addallTimeFav } from "../utils/slices/movieSlice";
 
 const useAllTimeFav = () => {
     const dispatch = useDispatch();

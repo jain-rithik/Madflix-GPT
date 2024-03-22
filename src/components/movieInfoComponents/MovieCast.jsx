@@ -1,9 +1,9 @@
 import React from "react";
-import useCast from "../hooks/useCast";
+import useCast from "../../hooks/useCast";
 import { useDispatch, useSelector } from "react-redux";
-import { IMG_CDN_URL } from "../utils/constants";
+import { IMG_CDN_URL } from "../../utils/constants/constants";
 import { Link } from "react-router-dom";
-import { clearCastMovies } from "../utils/movieSlice";
+import { clearCastMovies } from "../../utils/slices/movieSlice";
 
 const MovieCast = ({ id }) => {
     const dispatch = useDispatch();

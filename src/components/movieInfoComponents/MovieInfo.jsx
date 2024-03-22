@@ -1,14 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useMovieInfo from "../hooks/useMovieInfo";
-import Header from "./Header";
-import { BANNER_IMG_CDN_URL } from "../utils/constants";
+import useMovieInfo from "../../hooks/useMovieInfo";
+import Header from "../Header";
+import { BANNER_IMG_CDN_URL } from "../../utils/constants/constants";
 import { useDispatch, useSelector } from "react-redux";
 import MovieInfoContainer from "./MovieInfoContainer";
 import MovieCast from "./MovieCast";
 import MovieVideos from "./MovieVideos";
-import Loader from "./Loader";
-import { setOtherURL } from "../utils/configSlice";
+import Loader from "../Loader";
+import { setOtherURL } from "../../utils/slices/configSlice";
 
 const MovieInfo = () => {
   const dispatch = useDispatch();

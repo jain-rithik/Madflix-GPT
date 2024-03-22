@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { setOnlineStatus } from '../utils/configSlice';
+import { setOnlineStatus } from '../utils/slices/configSlice';
 
 const useOnlineStatus = () => {
     const dispatch = useDispatch();

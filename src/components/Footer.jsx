@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeLanguage } from "../utils/configSlice";
-import { SUPPORTED_LANGUAGES } from "../utils/constants";
-import lang from "../utils/languageConstants";
+import { changeLanguage } from "../utils/slices/configSlice";
+import { SUPPORTED_LANGUAGES } from "../utils/constants/constants";
+import lang from "../utils/constants/languageConstants";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

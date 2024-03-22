@@ -1,5 +1,5 @@
 import React from "react";
-import useVideo from "../hooks/useVideo";
+import useVideo from "../../hooks/useVideo";
 import { useSelector } from "react-redux";
 
 const MovieVideos = ({ id }) => {

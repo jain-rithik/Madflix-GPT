@@ -8,12 +8,12 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../utils/userSlice";
+import { addUser } from "../utils/slices/userSlice";
 import Footer from "./Footer";
-import { BANNER_IMG, USER_AVTAR } from "../utils/constants";
-import lang from "../utils/languageConstants";
+import { BANNER_IMG, USER_AVTAR } from "../utils/constants/constants";
+import lang from "../utils/constants/languageConstants";
 import { toast } from "react-toastify";
-import { setForgotPass } from "../utils/configSlice";
+import { setForgotPass } from "../utils/slices/configSlice";
 import ForgotPass from "./ForgotPass";
 
 const Login = () => {

@@ -1,10 +1,10 @@
 import React from "react";
 import Login from "./Login";
-import Browse from "./Browse";
-import MovieInfo from "./MovieInfo";
+import Browse from "./homePageComponents/Browse";
+import MovieInfo from "./movieInfoComponents/MovieInfo";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-import MoviesByActor from "./MoviesByActor";
+import MoviesByActor from "./movieInfoComponents/MoviesByActor";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useOnlineStatus from "../hooks/useOnlineStatus";

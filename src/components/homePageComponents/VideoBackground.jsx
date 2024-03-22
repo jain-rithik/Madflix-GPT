@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import useMovieTrailer from "../hooks/useMovieTrailer";
+import useMovieTrailer from "../../hooks/useMovieTrailer";
 
 const VideoBackground = ({ movieId }) => {
   useMovieTrailer(movieId);

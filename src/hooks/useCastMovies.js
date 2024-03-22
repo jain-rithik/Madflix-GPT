@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
-import { API_OPTIONS } from "../utils/constants";
+import { API_OPTIONS } from "../utils/constants/constants";
 import { useEffect } from "react";
-import { addCastMovies } from "../utils/movieSlice";
+import { addCastMovies } from "../utils/slices/movieSlice";
 
 
 const useCastMovies = (id) => {
