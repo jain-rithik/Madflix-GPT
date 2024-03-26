@@ -1,5 +1,7 @@
 # MadflixGPT - Your Ultimate Movie Companion!
 
+![MadflixGPT](./src/assets/MadflixGPT.png)
+
 ## Overview
 
 MadflixGPT is a cutting-edge movie information platform powered by advanced AI technology. With MadflixGPT, you can explore movies, discover new favorites, and get personalized movie recommendations based on any query you provide, thanks to the powerful OpenAI API integration.
