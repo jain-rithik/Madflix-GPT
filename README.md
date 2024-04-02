@@ -29,6 +29,11 @@ Explore MadflixGPT live: [MadflixGPT Live](https://madflixgpt.netlify.app/)
 - OpenAI API
 - TMDB API
 
+## Test Credentials
+
+- Email: test@gmail.com
+- Password: Testuser123
+
 ## Getting Started
 
 To get started with MadflixGPT, follow these steps:
