@@ -10,9 +10,7 @@ const useCast = (id) => {
     const fetchCast = async () => {
         const data = await fetch("https://api.themoviedb.org/3/movie/"+id+"/credits", API_OPTIONS);
         const json = await data.json();
-        console.log(json.cast);
         dispatch(addCastInfo(json.cast));
-        console.log("done");
     }
 
     useEffect(() => {

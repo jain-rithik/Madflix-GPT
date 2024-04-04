@@ -35,7 +35,7 @@ const GPTSearchBar = () => {
 
     // if(!gptResults.choices) {"do error handling"}
 
-    console.log(gptResults.choices?.[0]?.message?.content);
+    // console.log(gptResults.choices?.[0]?.message?.content);
     //"Andaz Apna Apna, Chupke Chupke, Padosan, Mera Naam Joker, Hera Pheri"
 
     const gptMovies = gptResults.choices?.[0]?.message?.content.split(", ");

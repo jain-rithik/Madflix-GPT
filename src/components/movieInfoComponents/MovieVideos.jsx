@@ -14,7 +14,6 @@ const MovieVideos = ({ id }) => {
         <span className="text-white font-bold md:text-3xl text-xl">Videos</span>
       </div>
       <div className="my-5">
-        {console.log(movieVideos)}
         <div className="flex flex-row gap-10 overflow-x-scroll">
           {movieVideos.map((movieVideo) => (
             <div key={movieVideo?.key} className="w-full md:w-auto">

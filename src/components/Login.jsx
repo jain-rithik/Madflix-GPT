@@ -124,7 +124,6 @@ const Login = () => {
       );
     };
     window.addEventListener("scroll", handle);
-    console.log("scroll");
 
     return () => window.removeEventListener("scroll", handle);
   }, []);
@@ -186,9 +185,9 @@ const Login = () => {
               className="absolute right-2 top-1/2 -translate-y-1/2 w-5 text-gray-200/50 cursor-pointer "
             >
               {showPass ? (
-                <i class="fa-regular fa-eye-slash"></i>
+                <i className="fa-regular fa-eye-slash"></i>
               ) : (
-                <i class="fa-regular fa-eye"></i>
+                <i className="fa-regular fa-eye"></i>
               )}
             </span>
 

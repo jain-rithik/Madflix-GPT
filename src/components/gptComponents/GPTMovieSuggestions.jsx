@@ -7,7 +7,6 @@ const GPTMovieSuggestions = () => {
   const gpt = useSelector((store) => store.gpt);
 
   const { movieResults, movieNames, searchBtnClicked } = gpt;
-  console.log(movieNames);
 
   return (
     <div className="p-4 md:px-8 px-2 m-4 md:my-7 text-white ">

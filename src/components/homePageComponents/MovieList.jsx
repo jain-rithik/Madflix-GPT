@@ -3,7 +3,6 @@ import MovieCard from "./MovieCard";
 import { Link } from "react-router-dom";
 
 const MovieList = ({ title, movies }) => {
-  console.log(movies);
 
   return (
     <div className="px-6 py-5">

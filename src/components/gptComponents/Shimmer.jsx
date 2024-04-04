@@ -15,10 +15,10 @@ const Shimmer = () => {
                   .map((el, idx) => {
                     return (
                       <div key={"ShimCard" + idx} className="mb-1">
-                        <div class="flex flex-col bg-gray-500 w-44 h-64 animate-pulse rounded-xl p-4 gap-4">
-                          <div class="bg-neutral-400/50 w-full h-56 animate-pulse rounded-md"></div>
-                          {/* <div class="flex flex-col gap-2">
-                            <div class="bg-neutral-400/50 w-full h-4 animate-pulse rounded-md"></div>
+                        <div className="flex flex-col bg-gray-500 w-44 h-64 animate-pulse rounded-xl p-4 gap-4">
+                          <div className="bg-neutral-400/50 w-full h-56 animate-pulse rounded-md"></div>
+                          {/* <div className="flex flex-col gap-2">
+                            <div className="bg-neutral-400/50 w-full h-4 animate-pulse rounded-md"></div>
                           </div> */}
                         </div>
                       </div>
