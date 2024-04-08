@@ -8,7 +8,7 @@ MadflixGPT is a cutting-edge movie information platform powered by advanced AI t
 
 ## Live Project
 
-Explore MadflixGPT live: [MadflixGPT Live](https://madflixgpt.netlify.app/)
+Explore MadflixGPT live: [MadflixGPT Live](https://madflix-gpt.onrender.com/)
 
 ## Features
 
